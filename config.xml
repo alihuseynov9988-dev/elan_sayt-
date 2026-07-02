@@ -1,2 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.elansayti.app" version="1.0.0" xmlns="http://apache.org" xmlns:cdv="http://apache.org/xhtml">
+    <name>Elan Sayti</name>
+    <description>Mənim Elan Saytım Mobil Tətbiqi</description>
+    <content src="https://github.io" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-navigation href="*" />
+</widget>
 
 
