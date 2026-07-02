@@ -1,1 +1,41 @@
+name: Build Cordova Android APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Kodu kopyala
+      uses: actions/checkout@v4
+
+    - name: Node.js quraşdır
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Java (JDK 17) quraşdır
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Cordova CLI quraşdır
+      run: npm install -g cordova
+
+    - name: Android platformasını əlavə et
+      run: cordova platform add android
+
+    - name: APK Faylını Qur (Build)
+      run: cordova build android --debug
+
+    - name: Hazır APK-nı GitHub-a yüklə
+      uses: actions/upload-artifact@v4
+      with:
+        name: Elan-Sayti-APK
+        path: platforms/android/app/build/outputs/apk/debug/app-debug.apk
 
