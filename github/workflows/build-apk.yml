@@ -2,7 +2,8 @@ name: Build Cordova Android APK
 
 on:
   push:
-    branches: [ asas ]
+    branches: [ main ]
+
   workflow_dispatch:
 
 jobs:
